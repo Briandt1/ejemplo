@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #f0f0f0; /* Color de fondo opcional */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Cambio a orientación vertical */
+  height: 100vh; /* Altura del contenedor principal */
+  width: 80vw; /* Ancho del contenedor principal */
+  margin: auto;
+  overflow: hidden; /* Para ocultar los paneles que se extienden fuera del contenedor */
+}
+
+.panel {
+  background-size: cover; /* Ajuste para cubrir todo el panel con la imagen */
+  background-position: center;
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  border-radius: 20px; /* Redondear las esquinas */
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 0; /* Margen vertical entre paneles */
+  position: relative;
+  transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out; /* Transición para altura y opacidad */
+}
+
+.panel h3 {
+  font-size: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.panel.active {
+  height: 350%; /* Altura aumentada para panel activo */
+}
+
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+  }
+}
